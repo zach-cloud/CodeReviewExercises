@@ -1,0 +1,46 @@
+Problem #1: All code written in the main method.
+
+Even for a simple program like this calculator, it's always best to split things up into methods. In addition,
+you should try to keep the main method as simple as possible. Preferably, the main method only creates
+and runs an object.
+
+Problem #2: Poor variable names.
+
+The scanner is named "abc", the operation name is "asdf", the two ints are named "d" and "e"
+
+You should always try to choose the most descriptive variable names possible. Think to yourself: if this was
+outside the context of the program, would I understand what this variable does?
+
+The answer for these is clearly no.
+
+Problem #3: == used for String comparison.
+
+Remember that String variables are references. Trying to compare a String with == will compare the reference, not
+the contents. This is very rarely intended. Instead of this, use the .equals() operator.
+
+Problem #4: ^ used for power.
+
+In Java, the operator ^ is NOT a "power" operator. It is the bitwise exclusive or.
+
+Code using ^ will compile properly but not give the proper result. For power, use Math.pow
+
+Problem #5: Bad looking if statements
+
+When possible, you should connect your if statements with else if. In the provided example,
+none of the if statements are connected even though only one could ever be true at the same time.
+
+You could even use a switch statement here to make the code even cleaner.
+
+Problem #6: No error checking
+
+The application will crash if the user enters something that's not a number. Also, the program
+allows the user to enter operations that don't actually exist.
+
+Problem #7: Not extensible
+
+This is more of a conceptual problem, but it's a problem nonetheless.
+
+We always want to make code as easy to change as possible. This code is not the easiest to change as it could be,
+since there is so much hardcoded stuff in here.
+
+See the fixed code in the "fixed" package and see if you can identify how each of these problems are addressed!
