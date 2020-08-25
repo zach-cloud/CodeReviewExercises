@@ -1,0 +1,19 @@
+The mistake in this code is that the if statement is totally unnecessary.
+
+Whenever you see code like this:
+
+if(...) {
+    return true;
+} else {
+    return false;
+}
+
+You can simplify it by just returning the result of the boolean expression in the if statement:
+
+return(...);
+
+See the fixed example for how this would be applied for the IsBetween class.
+
+The reason this is the case is because the expression inside the if statement either evalutates to true or false.
+If it evaluates true, we return true, else we return false.
+This works, but it's much cleaner to simply return the result of the expression and cut out the unnecessary steps.

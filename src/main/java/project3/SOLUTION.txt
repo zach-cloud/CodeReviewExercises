@@ -1,0 +1,43 @@
+Problem #1: No generic types used.
+
+This LinkedList can only hold Strings. When we write a data type like a LinkedList, we want to make it as generic
+as possible and make it able to hold any data type.
+
+In order to do this, we can add a generic <T> type to the class declaration.
+
+Problem #2: Add method glitched for more than 2 elements
+
+This line here:
+
+    head.next = newNode;
+
+Is not the correct way of adding an element. In fact, it will only work for adding a single element to the list. Adding more
+than one element will just overwrite head.next. In order to fix this, we need to loop through all the nodes
+until we find an empty element, and then add the new node there instead of inserting it right after the head.
+
+Problem #3: Get method does not size check
+
+If the user tries to get an element that does not exist, it will crash with a NullPointer exception. We may want to throw
+an exception here, but we would want to give a proper message for it. I chose to fix this by simply returning null in my
+fixed code. There are multiple ways to handle something like this.
+
+Problem #3: Size actually gives (size - 1) as result
+
+This line here:
+
+    whichNode.next != null
+
+Is wrong. It ends the loop one iteration too early and actually returns the size minus one, rather than the size.
+
+Also, the proper way of implementing this is to keep track of the size as a variable rather than computing it
+when size is called.
+
+Problem #4: Everything is public
+
+The Node class itself, and the head variable, are made public when they shouldn't be.
+
+These are internal details of the class and should be private!
+
+Problem #5: Undocumented public methods
+
+None of the methods have Javadoc written for them.
